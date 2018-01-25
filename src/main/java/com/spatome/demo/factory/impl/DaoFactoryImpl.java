@@ -11,9 +11,11 @@
  */
 package com.spatome.demo.factory.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import com.spatome.demo.dao.TestMapper;
 import com.spatome.demo.factory.DaoFactory;
 
 /** 
@@ -25,5 +27,13 @@ import com.spatome.demo.factory.DaoFactory;
 @Lazy
 @Service
 public class DaoFactoryImpl implements DaoFactory {
+
+	@Autowired
+	private TestMapper testMapper;
+	
+	@Override
+	public TestMapper getTestMapper() {
+		return testMapper;
+	}
 
 }

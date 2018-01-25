@@ -22,7 +22,7 @@
 	<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<!-- <value>classpath:mybatis/jdbc.properties</value> -->
+				<value>classpath:mybatis/jdbc.properties</value>
 			</list>
 		</property>
 		<property name="fileEncoding" value="UTF-8" />
@@ -33,4 +33,6 @@
 
 	<context:component-scan base-package="com.spatome.*" />
 
+
+	<import resource="classpath:mybatis/spring-mybatis.xml" />
 </beans> 

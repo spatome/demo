@@ -20,9 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Service;
 
 import com.spatome.demo.controller.BaseController.BaseVO;
+import com.spatome.demo.entity.Test;
 import com.spatome.demo.service.TranService;
 import com.spatome.demo.service.impl.BaseService;
-import com.spatome.demo.vo.UserVO;
 
 /** 
  * @ClassName: Tran10000ServiceImpl 
@@ -31,11 +31,11 @@ import com.spatome.demo.vo.UserVO;
  * @date: 2017年9月27日 下午6:44:45  
  */
 @Service
-public class Tran00000ServiceImpl extends BaseService implements TranService {
+public class Tran00001ServiceImpl extends BaseService implements TranService {
 
 	@Override
 	public Object execute(HttpServletRequest request, HttpServletResponse response) {
-		BaseVO<UserVO> result = new BaseVO<UserVO>();
+		BaseVO<Test> result = new BaseVO<Test>();
 
 		LOGGER.info("获取参数");
 		LOGGER.info("检查参数");
@@ -43,6 +43,9 @@ public class Tran00000ServiceImpl extends BaseService implements TranService {
 		super.checkNotEmpty(paramMap);
 
 		LOGGER.debug("===========================业务处理=========================");
+		Test record = daoFactory.getTestMapper().selectByPrimaryKey(1l);
+
+		result.setBody(record);
 
 		return result;
 	}

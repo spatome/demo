@@ -11,6 +11,8 @@
  */
 package com.spatome.demo.factory;
 
+import com.spatome.demo.dao.TestMapper;
+
 /** 
  * @ClassName: DaoFactory 
  * @Description: TODO
@@ -18,5 +20,7 @@ package com.spatome.demo.factory;
  * @date: 2017年8月22日 下午4:08:39  
  */
 public interface DaoFactory {
+
+	public TestMapper getTestMapper();
 
 }
