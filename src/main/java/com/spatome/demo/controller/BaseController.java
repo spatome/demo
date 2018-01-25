@@ -50,7 +50,10 @@ public class BaseController {
 			this.message = message;
 		}
 
-
+		public void setCodeMessage(String code, String message){
+			this.code = code;
+			this.message = message;
+		};
 		
 		public String getCode() {
 			return code;

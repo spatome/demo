@@ -28,6 +28,15 @@
 		<property name="fileEncoding" value="UTF-8" />
 	</bean>
 
+	<bean id="propertiesUtil" class="com.spatome.util.PropertiesUtil">
+		<property name="locations">
+			<list>
+				<value>classpath:config.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding" value="UTF-8" />
+	</bean>
+
 	<!-- 定时器开关 -->
 <!-- 	<task:annotation-driven /> -->
 
