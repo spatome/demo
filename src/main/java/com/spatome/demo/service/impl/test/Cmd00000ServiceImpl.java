@@ -11,15 +11,13 @@
  */
 package com.spatome.demo.service.impl.test;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import com.spatome.demo.controller.BaseController.BaseVO;
-import com.spatome.demo.service.TranService;
+import com.spatome.demo.service.CmdService;
 import com.spatome.demo.service.impl.BaseService;
-import com.spatome.demo.vo.UserVO;
 
 /** 
  * @ClassName: Tran10000ServiceImpl 
@@ -28,12 +26,16 @@ import com.spatome.demo.vo.UserVO;
  * @date: 2017年9月27日 下午6:44:45  
  */
 @Service
-public class Tran00000ServiceImpl extends BaseService implements TranService {
+public class Cmd00000ServiceImpl extends BaseService implements CmdService {
 
 	@Override
-	public Object execute(HttpServletRequest request, HttpServletResponse response) {
-		BaseVO<UserVO> result = new BaseVO<UserVO>();
+	public Object execute(Map<String, String> maps) {
+		BaseVO<String> result = new BaseVO<String>();
 
+		String param1 = maps.get("param1");
+		
+		result.setBody(param1);
+		
 		return result;
 	}
 }

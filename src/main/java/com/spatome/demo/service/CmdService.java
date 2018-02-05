@@ -11,8 +11,7 @@
  */
 package com.spatome.demo.service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /** 
  * @ClassName: TranService 
@@ -20,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author: zhangwei
  * @date: 2017年9月27日 下午2:42:48  
  */
-public interface TranService {
+public interface CmdService {
 
-	public Object execute(HttpServletRequest request, HttpServletResponse response);
+	public Object execute(Map<String, String> maps);
 	
 }

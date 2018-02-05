@@ -1,13 +1,13 @@
 package com.spatome.demo.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spatome.demo.service.TranService;
+import com.spatome.demo.service.CmdService;
 import com.spatome.util.SpringUtil;
 
 @RestController
@@ -15,11 +15,11 @@ import com.spatome.util.SpringUtil;
 public class TransTypeController extends BaseController {
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public Object process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String transType = request.getParameter("transType");
+	public Object process(@RequestBody Map<String, String> maps) throws Exception {
+		String cmd = maps.get("cmd");
 
-		Object bean = SpringUtil.getApplicationContext().getBean("tran"+transType+"ServiceImpl");
-		Object result = ((TranService)bean).execute(request, response);
+		Object bean = SpringUtil.getApplicationContext().getBean("cmd"+cmd+"ServiceImpl");
+		Object result = ((CmdService)bean).execute(maps);
 
 		return result;
 	}

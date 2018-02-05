@@ -15,6 +15,9 @@ public class DemoController extends BaseController {
 	public Object test(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		BaseVO<Object> result = new BaseVO<Object>();
 
+		String id = request.getParameter("id");
+		result.setBody(id);
+		
 		LOGGER.debug("这是Debug");
 		LOGGER.info("这是Info");
 		LOGGER.error("这是Error");
